@@ -1,0 +1,11 @@
+Revision history for WWW-Facebook-API-REST-Client
+
+0.0.2  Sat Sep 16 13:00:24 2006
+        Initial release.
+        Added more tests
+        Changed module structure slightly
+	    - Client/Auth/UserLogin.pm -> Client/Login.pm
+
+0.0.1  Mon Aug 21 13:09:11 2006
+        Initial development.
+
