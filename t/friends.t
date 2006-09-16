@@ -1,4 +1,4 @@
-use Test::More tests => 19;
+use Test::More tests => 23;
 use Test::MockObject::Extends;
 use WWW::Mechanize;
 use WWW::Facebook::API::REST::Client::Base;
@@ -64,6 +64,16 @@ my $friends = WWW::Facebook::API::REST::Client::Friends->new(
     is $are_friends[1], 0, 'second pair of id1 and id2 are not';
 }
 
+{
+    my $result = $friends->get_app_users->{result}->[0];
+    is $result->{method}, 'facebook.friends.getAppUsers', 'method correct';
+    
+    my @friends_ids = @{$result->{result_elt}};
+    is @friends_ids, 2, 'num of elements correct for getAppUsers';
+    is $friends_ids[0], 'iPF_ahrjO4z3fpYh8-ySIMA..', 'first friend id correct';
+    is $friends_ids[1], 'iNKaODV1u8Aq1HNcGvfk27w..', 'second friend id correct';
+}
+
 __DATA__
 <?xml version="1.0" encoding="UTF-8"?>
 <result method="facebook.friends.getTyped">
@@ -81,4 +91,10 @@ __DATA__
 <result method="facebook.friends.areFriends">
   <result_elt>1</result_elt>
   <result_elt>0</result_elt>
+</result>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<result method="facebook.friends.getAppUsers">
+  <result_elt>iPF_ahrjO4z3fpYh8-ySIMA..</result_elt>
+  <result_elt>iNKaODV1u8Aq1HNcGvfk27w..</result_elt>
 </result>

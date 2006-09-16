@@ -1,6 +1,6 @@
 #######################################################################
-# $Date: 2006-09-16T21:02:53.635514Z $
-# $Revision: 32510 $
+# $Date: 2006-09-16T21:35:57.648648Z $
+# $Revision: 32521 $
 # $Author: unobe $
 # ex: set ts=8 sw=4 et
 #########################################################################
@@ -10,7 +10,7 @@ use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('0.0.2');
+use version; our $VERSION = qv('0.0.3');
 
 use Moose;
 
@@ -32,7 +32,7 @@ WWW::Facebook::API::REST::Client::Pokes - Pokes methods for Client
 
 =head1 VERSION
 
-This document describes WWW::Facebook::API::REST::Client::Pokes version 0.0.2
+This document describes WWW::Facebook::API::REST::Client::Pokes version 0.0.3
 
 
 =head1 SYNOPSIS

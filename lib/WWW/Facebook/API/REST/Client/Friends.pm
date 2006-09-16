@@ -1,6 +1,6 @@
 #######################################################################
-# $Date: 2006-09-16T21:02:53.635514Z $
-# $Revision: 32510 $
+# $Date: 2006-09-16T21:35:57.648648Z $
+# $Revision: 32521 $
 # $Author: unobe $
 # ex: set ts=8 sw=4 et
 #########################################################################
@@ -10,7 +10,7 @@ use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('0.0.2');
+use version; our $VERSION = qv('0.0.3');
 
 use Moose;
 
@@ -45,6 +45,10 @@ sub are_friends {
     );
 }
 
+sub get_app_users {
+    return $_[0]->base->call( method => 'facebook.friends.getAppUsers' );
+}
+
 1; # Magic true value required at end of module
 __END__
 
@@ -55,7 +59,7 @@ WWW::Facebook::API::REST::Client::Friends - Friend methods for Client
 
 =head1 VERSION
 
-This document describes WWW::Facebook::API::REST::Client::Friends version 0.0.2
+This document describes WWW::Facebook::API::REST::Client::Friends version 0.0.3
 
 
 =head1 SYNOPSIS
@@ -88,6 +92,10 @@ The friends.getTyped method of the Facebook API
 =item are_friends
 
 The friends.areFriends method of the Facebook API
+
+=item get_app_users
+
+The friends.getAppUsers method of the Facebook API
 
 =back
 

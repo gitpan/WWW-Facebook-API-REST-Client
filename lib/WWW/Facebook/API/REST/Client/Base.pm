@@ -1,6 +1,6 @@
 #######################################################################
-# $Date: 2006-09-16T21:02:53.635514Z $
-# $Revision: 32510 $
+# $Date: 2006-09-16T21:35:57.648648Z $
+# $Revision: 32521 $
 # $Author: unobe $
 # ex: set ts=8 sw=4 et
 #########################################################################
@@ -16,7 +16,7 @@ use URI::Escape;
 use XML::Simple qw(xml_in);
 use Digest::MD5 qw(md5_hex);
 
-use version; our $VERSION = qv('0.0.2');
+use version; our $VERSION = qv('0.0.3');
 
 use Moose;
 use WWW::Facebook::API::REST::Client::Errors;
@@ -129,7 +129,7 @@ WWW::Facebook::API::REST::Client::Base - Base class for Client
 
 =head1 VERSION
 
-This document describes WWW::Facebook::API::REST::Client::Base version 0.0.2
+This document describes WWW::Facebook::API::REST::Client::Base version 0.0.3
 
 
 =head1 SYNOPSIS
